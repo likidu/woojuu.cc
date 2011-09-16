@@ -33,9 +33,9 @@
 
 @import 'grid.less';
 
-@columns:           10;
-@column-width:      48;
-@gutter-width:      22;
+@columns:           5;
+@column-width:      100;
+@gutter-width:      40;
 
 // Uncomment the definition below for a percentage-based layout
 // @total-width:    100%;
@@ -43,20 +43,38 @@
 /* ---------------------------------- */
 
 /* @Variables */
-@logo-size:         228px;
+@link-color:            #303030;
+@selection-color:       #aeda50;
+@date-color:            #949494;
 
-@name-width:        266px;
-@name-height:       67px;
+@nav-height:            33px;
+@nav-margin:            25px;
 
-@free-badge-size:   109px;
+@hgroup-padding-top:    20px;
 
-@appstore-width:    160px;
-@appstore-height:   53px;
+@logo-size:             228px;
+@logo-margin:           82px;
 
-@bulletpoint-width: 110px;
-@bulletpoint-height: 25px;
+@name-logo-gap:         34px;
+@name-width:            266px;
+@name-height:           67px;
 
-@bptitle-offset:    25px;
+@free-badge-size:       111px;
+
+@appstore-logo-gap:     86px;
+
+@free-badge-size:       109px;
+
+@appstore-width:        160px;
+@appstore-height:       53px;
+
+@content-padding:       40px;   
+@bulletpoint-width:     110px;
+@bulletpoint-height:    25px;
+@bulletpoint-title-offset:  25px;
+
+@iphone-frame-width:    380px;
+@iphone-frame-height:   320px;
 
 /* ---------------------------------- */
 
@@ -66,13 +84,31 @@
     padding: 0;
     overflow: hidden;
 }
+.container-padding {
+    padding: 0 37px;
+}
 .sprite (@left: 0, @top: 0) {
     background-image: url('../image/css-sprite.png');
     background-position: @left @top;
+    background-repeat: no-repeat;
 }
 .graphic-text {
     text-indent: -9999px;
 }
+.text-shadow {
+    text-shadow: 0 1px #fff;
+}
+.bulletpoint-content {
+    position: absolute;
+    top: -4px;
+    left: 135px;
+    width: 390px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+    .text-shadow;
+}
+
 
 /* ---------------------------------- */
 
@@ -84,50 +120,73 @@
 body {
     background-image: url('../image/bg-woojuu-loop.jpg');
 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { margin: 0; }
+h1, h2, h3 { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+a {
+    color: @link-color;
+    text-decoration: none;
+
+    &:active, &:visited { color: @link-color; }
+    &:hover {
+        border-bottom: solid 1px @link-color;
+    }
+}
+
+
+::-moz-selection { background: @selection-color; }
+::selection { background: @selection-color; }
 
 /* ---------------------------------- */
 
 /* @Wrapper */
 div#wrapper {
     width: 774px;
-    height: 950px;
-    border: solid 1px red;
-    background-image: url('../image/bg-paper-loop.png');
     .middle-align();
 }
 
 /* ---------------------------------- */
 
-/* @Main */
-div#main {
-    width: 700px;
-    border: solid 1px green;
-    .middle-align(37px);
-    
-    /* ---------------------------------- */
+/* @Header */
+header {
+    .container-padding;
+    background: url('../image/bg-paper-header.png') 0 0 no-repeat;
 
-    /* @Header */
-    header {
-        width: 100%;
-        background: url('../image/bg-paper-header.png') 0 0;
+    nav {
+        line-height: @nav-height;
+        margin: 0 @nav-margin;
 
-        nav {
-        
+        li.date {
+            color: @date-color;
+            .text-shadow;
         }
+    }
+    hgroup {
+        position: relative;
+        padding-top: @hgroup-padding-top;
+        .sprite(0px, -700px);
+
         h1 {
             width: @logo-size;
             height: @logo-size;
             .graphic-text;
             .sprite(0px, 0px);
+            margin-left: @logo-margin;
         }
         h2 {
-           width: @name-width;
-           height: @name-height;
-           .graphic-text;
-           .sprite(-250px, 0px);
+            position: absolute;
+            top: @hgroup-padding-top + 34px;
+            left: @logo-margin + @logo-size + @name-logo-gap;
+            width: @name-width;
+            height: @name-height;
+            .graphic-text;
+            .sprite(-250px, 0px);
         }
         a.appstore {
             display: block;
+            position: absolute;
+            top: @hgroup-padding-top + @name-height + 58px;
+            left: @logo-margin + @logo-size + @appstore-logo-gap;
             width: @appstore-width;
             height: @appstore-height;
             .graphic-text;
@@ -135,53 +194,94 @@ div#main {
             text-decoration: none;
 
             &:visited {}
-            &:hover { .sprite(-400px, -154px); }
+            &:hover { text-decoration: none; border: none; .sprite(-400px, -154px); }
             &:active { .sprite(-400px, -208px); }
-
+        }
+        figure {
+            position: absolute;
+            top: @hgroup-padding-top;
+            right: -@free-badge-size / 2 + 20px;
+            width: @free-badge-size;
+            height: @free-badge-size;
+            .graphic-text;
+            .sprite(-250px, -100px);
         }
     }
-    
-    /* ---------------------------------- */
+}
+/* ---------------------------------- */
 
+/* @Content */
+div#content {
+    .container-padding;
+    padding-top: @content-padding;
+    padding-bottom: @content-padding;
+    background: url('../image/bg-paper-loop.png') 0 0 repeat-y;
+    
     /* @Bulletpoints */
     ul#bulletpoints {
         list-style: none;
-        margin: 0;
-        padding: 0 22px;
+        margin: 0 88px;
+
         li {
-            border: solid 1px red;
+            position: relative;
+            margin-bottom: 40px;
 
             h2 {
-                display: jlock;
                 width: @bulletpoint-width;
                 height: @bulletpoint-height;
-                .graphic-text;
             }
-            p {
-                display: inline;
-                position: relative;
-                left: 132px;
-            }
+            p { .bulletpoint-content; }
         }
-        li#bulletpoint-ui { 
-            h2 { .sprite(-250px, -250px); }
+        li#bulletpoint-ui {
+            h2 { .graphic-text; .sprite(-250px, -250px); }
         }
-        li#bulletpoint-badge { 
-            h2 { .sprite(-250px, (-250px - @bptitle-offset)); }
+        li#bulletpoint-budget {
+            h2 { .graphic-text; .sprite(-250px, (-250px - @bulletpoint-title-offset)); }
         }
-        li#bulletpoint-seconds { 
-            h2 { .sprite(-250px, (-250px - @bptitle-offset * 2)); }
+        li#bulletpoint-seconds {
+            h2 { .graphic-text; .sprite(-250px, (-250px - @bulletpoint-title-offset * 2)); }
         }
-
     }
-
-    /* ---------------------------------- */
-
-    /* @Footer */
-    footer {
-    
-    }
-    
 }
 
+/* ---------------------------------- */
 
+/* @Footer */
+footer {
+    .container-padding;
+    background: url('../image/bg-paper-footer.png') no-repeat left bottom;
+    padding-bottom: 30px;
+    
+    #iphone-slideshow {
+
+        #iphone-frame {
+            width: @iphone-frame-width;
+            height: @iphone-frame-height;
+            .middle-align;
+            .sprite(0px, -350px);    
+            .graphic-text;
+        }
+    }
+    
+    nav {
+        height: @nav-height;
+        padding-top: 20px;
+        .sprite(0px, -700px);
+        
+        ul {
+            margin: 0 @nav-margin;
+        }
+        ul#jingxifang {
+            li {
+                float: left;
+                margin-right: 10px;
+            }
+        }
+        ul#about {
+            li {
+                float: right;
+                margin-left: 24px;
+            }
+        }
+    }
+}
