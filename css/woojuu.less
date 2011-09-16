@@ -33,47 +33,155 @@
 
 @import 'grid.less';
 
-@columns:           3;
-@column-width:      240;
-@gutter-width:      60;
+@columns:           10;
+@column-width:      48;
+@gutter-width:      22;
 
 // Uncomment the definition below for a percentage-based layout
 // @total-width:    100%;
 
 /* ---------------------------------- */
 
-/* @FontFace)*/
+/* @Variables */
+@logo-size:         228px;
+
+@name-width:        266px;
+@name-height:       67px;
+
+@free-badge-size:   109px;
+
+@appstore-width:    160px;
+@appstore-height:   53px;
+
+@bulletpoint-width: 110px;
+@bulletpoint-height: 25px;
+
+@bptitle-offset:    25px;
+
+/* ---------------------------------- */
+
+/* @Mixins */
+.middle-align (@margin: auto) {
+    margin: 0 @margin;
+    padding: 0;
+    overflow: hidden;
+}
+.sprite (@left: 0, @top: 0) {
+    background-image: url('../image/css-sprite.png');
+    background-position: @left @top;
+}
+.graphic-text {
+    text-indent: -9999px;
+}
+
+/* ---------------------------------- */
+
+/* @FontFace*/
 
 /* ---------------------------------- */
 
 /* @Global */
 body {
-    background: url('../image/woojuu-bg-loop.jpg');
+    background-image: url('../image/bg-woojuu-loop.jpg');
 }
 
 /* ---------------------------------- */
 
 /* @Wrapper */
-
 div#wrapper {
-    width: 900px;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
+    width: 774px;
+    height: 950px;
+    border: solid 1px red;
+    background-image: url('../image/bg-paper-loop.png');
+    .middle-align();
 }
 
 /* ---------------------------------- */
 
-/* @Sidebar */
-
-aside {
-    .column(1);
-}
-
-/* ---------------------------------- */
-
-/* @Header */
-
+/* @Main */
 div#main {
-    .column(2);
+    width: 700px;
+    border: solid 1px green;
+    .middle-align(37px);
+    
+    /* ---------------------------------- */
+
+    /* @Header */
+    header {
+        width: 100%;
+        background: url('../image/bg-paper-header.png') 0 0;
+
+        nav {
+        
+        }
+        h1 {
+            width: @logo-size;
+            height: @logo-size;
+            .graphic-text;
+            .sprite(0px, 0px);
+        }
+        h2 {
+           width: @name-width;
+           height: @name-height;
+           .graphic-text;
+           .sprite(-250px, 0px);
+        }
+        a.appstore {
+            display: block;
+            width: @appstore-width;
+            height: @appstore-height;
+            .graphic-text;
+            .sprite(-400px, -100px);
+            text-decoration: none;
+
+            &:visited {}
+            &:hover { .sprite(-400px, -154px); }
+            &:active { .sprite(-400px, -208px); }
+
+        }
+    }
+    
+    /* ---------------------------------- */
+
+    /* @Bulletpoints */
+    ul#bulletpoints {
+        list-style: none;
+        margin: 0;
+        padding: 0 22px;
+        li {
+            border: solid 1px red;
+
+            h2 {
+                display: jlock;
+                width: @bulletpoint-width;
+                height: @bulletpoint-height;
+                .graphic-text;
+            }
+            p {
+                display: inline;
+                position: relative;
+                left: 132px;
+            }
+        }
+        li#bulletpoint-ui { 
+            h2 { .sprite(-250px, -250px); }
+        }
+        li#bulletpoint-badge { 
+            h2 { .sprite(-250px, (-250px - @bptitle-offset)); }
+        }
+        li#bulletpoint-seconds { 
+            h2 { .sprite(-250px, (-250px - @bptitle-offset * 2)); }
+        }
+
+    }
+
+    /* ---------------------------------- */
+
+    /* @Footer */
+    footer {
+    
+    }
+    
 }
+
+
