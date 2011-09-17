@@ -96,7 +96,7 @@
     text-indent: -9999px;
 }
 .text-shadow {
-    text-shadow: 0 1px #fff;
+    text-shadow: 0 1px 0 #fff;
 }
 .bulletpoint-content {
     position: absolute;
@@ -258,8 +258,12 @@ footer {
             width: @iphone-frame-width;
             height: @iphone-frame-height;
             .middle-align;
-            .sprite(0px, -350px);    
-            .graphic-text;
+            .sprite(0px, -350px);
+
+            img {
+                margin-left: 32px;
+                margin-top: 132px;
+            }
         }
     }
     

@@ -53,7 +53,10 @@
         </div><!-- end of #content -->
         <footer>
             <section id="iphone-slideshow">
-                <div id="iphone-frame">莴苣程序界面</div>
+                <div id="iphone-frame">
+                    <img src="image/ui-cycle-01.jpg" width="321" height="188" alt="" />
+                    <img src="image/ui-cycle-02.jpg" width="321" height="188" alt="" />
+                </div>
             </section>
             <nav>
                 <ul id="jingxifang">
@@ -86,19 +89,28 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-        <!-- Google Analytics -->
-        <script type="text/javascript">
+    <script src="js/libs/jquery.cycle.lite.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#iphone-frame').cycle({
+                fx: 'fade',
+                speed: 1000
+            });
+        });
+    </script>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
 
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-25654052-1']);
-            _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25654052-1']);
+        _gaq.push(['_trackPageview']);
 
-            (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })();
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
 
-         </script>
+     </script>
 </body>
 </html>
