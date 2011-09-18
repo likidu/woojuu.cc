@@ -215,7 +215,7 @@ div#content {
     .container-padding;
     padding-top: @content-padding;
     padding-bottom: @content-padding;
-    background: url('../image/bg-paper-loop.png') 0 0 repeat-y;
+    background: url('../image/bg-paper-loop.png') repeat-y left top;
     
     /* @Bulletpoints */
     ul#bulletpoints {
@@ -285,6 +285,19 @@ footer {
             li {
                 float: right;
                 margin-left: 24px;
+            }
+        }
+        a#weibo {
+            display: block;
+            width: 19px;
+            height: 17px;
+            margin: -2px;
+            .sprite(0px, -250px);
+            .graphic-text;
+            
+            &:hover {
+                border: none;
+                .sprite(0px, -275px);
             }
         }
     }
