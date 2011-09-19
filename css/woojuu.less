@@ -69,9 +69,9 @@
 @appstore-height:       53px;
 
 @content-padding:       40px;   
-@bulletpoint-width:     110px;
-@bulletpoint-height:    25px;
-@bulletpoint-title-offset:  25px;
+@highlight-width:     110px;
+@highlight-height:    25px;
+@highlight-title-offset:  25px;
 
 @iphone-frame-width:    380px;
 @iphone-frame-height:   320px;
@@ -98,7 +98,7 @@
 .text-shadow {
     text-shadow: 0 1px 0 #fff;
 }
-.bulletpoint-content {
+.highlight-content {
     position: absolute;
     top: -4px;
     left: 135px;
@@ -108,8 +108,9 @@
     line-height: 22px;
     .text-shadow;
 }
-
-
+.content-list {
+    margin: 0 88px;
+}
 /* ---------------------------------- */
 
 /* @FontFace*/
@@ -142,7 +143,7 @@ a {
 /* @Wrapper */
 div#wrapper {
     width: 774px;
-    .middle-align();
+    .middle-align;
 }
 
 /* ---------------------------------- */
@@ -217,30 +218,69 @@ div#content {
     padding-bottom: @content-padding;
     background: url('../image/bg-paper-loop.png') repeat-y left top;
     
-    /* @Bulletpoints */
-    ul#bulletpoints {
+    /* @Hightlights */
+    ul#highlights {
         list-style: none;
-        margin: 0 88px;
+        .content-list;
 
         li {
             position: relative;
             margin-bottom: 40px;
 
             h2 {
-                width: @bulletpoint-width;
-                height: @bulletpoint-height;
+                width: @highlight-width;
+                height: @highlight-height;
             }
-            p { .bulletpoint-content; }
+            p { .highlight-content; }
         }
-        li#bulletpoint-ui {
+        li#highlight-ui {
             h2 { .graphic-text; .sprite(-250px, -250px); }
         }
-        li#bulletpoint-budget {
-            h2 { .graphic-text; .sprite(-250px, (-250px - @bulletpoint-title-offset)); }
+        li#highlight-budget {
+            h2 { .graphic-text; .sprite(-250px, (-250px - @highlight-title-offset)); }
         }
-        li#bulletpoint-seconds {
-            h2 { .graphic-text; .sprite(-250px, (-250px - @bulletpoint-title-offset * 2)); }
+        li#highlight-seconds {
+            h2 { .graphic-text; .sprite(-250px, (-250px - @highlight-title-offset * 2)); }
         }
+    }
+    
+    /* ---------------------------------- */
+    
+    /* @FAQ */
+    #faq {
+        .content-list;
+
+        h2 {
+            .sprite(-400px, -275px);
+            .graphic-text;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style: none;
+            
+            li { 
+                margin-top: 30px;
+
+                h2 { .text-shadow; }
+            }
+            a { color: #666; }
+        }
+        p { line-height: 20px; }
+    }
+
+    /* ---------------------------------- */
+    
+    /* @About */
+    #about {
+        .content-list;
+
+        h2 {
+            .graphic-text;
+            margin-bottom: 30px;
+        }
+        h2.us { .sprite(-400px, -299px); }
+        h2.team { .sprite(-400px, -323px); margin-top: 30px; }
+        p { line-height: 20px; }
     }
 }
 
