@@ -270,8 +270,8 @@ div#content {
 
     /* ---------------------------------- */
     
-    /* @About */
-    #about {
+    /* @About Us */
+    #about-us {
         .content-list;
 
         h2 {
@@ -280,6 +280,27 @@ div#content {
         }
         h2.us { .sprite(-400px, -299px); }
         h2.team { .sprite(-400px, -323px); margin-top: 30px; }
+        ul {
+            list-style: none;
+            margin-left: 60px;
+            
+            li {
+                position: relative;
+                figure { position: absolute; top: 0; left: -60px; }
+            }
+            li#about-liki {
+                figure { width: 42px; height: 48px; .sprite(-400px, -375px); .graphic-text; }
+            }
+            li#about-rome {
+                figure { width: 42px; height: 48px; .sprite(-454px, -375px); .graphic-text; }
+            }
+            li#about-daisy {
+                figure{ width: 42px; height: 48px; .sprite(-503px, -375px); .graphic-text; }
+            }
+            li#about-grace {
+                figure { width: 42px; height: 48px; .sprite(-555px, -375px); .graphic-text; }
+            }
+        }
         p { line-height: 20px; }
     }
 }
