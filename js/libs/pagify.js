@@ -13,7 +13,7 @@
   
     this.defaults = {
       pages: [],
-      default: null,
+      first: null, //liki: change variable name from 'default' to 'first' as it causes error under IE
       animation: 'show',
       onChange: function (page) {},
       cache: false
@@ -46,7 +46,7 @@
 
       // Load initial page - current hash or default page
       if(window.location.hash) self.switchPage();
-      else if(self.settings.default) self.switchPage(self.settings.default);
+      else if(self.settings.first) self.switchPage(self.settings.first);
 
     };
 

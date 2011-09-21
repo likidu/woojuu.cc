@@ -69,10 +69,12 @@
 @appstore-height:       53px;
 
 @content-padding:       40px;   
-@highlight-width:     110px;
-@highlight-height:    25px;
+@highlight-width:       110px;
+@highlight-height:      25px;
 @highlight-title-offset:  25px;
 
+@clip-width:            47px;
+@clip-height:           49px;
 @iphone-frame-width:    380px;
 @iphone-frame-height:   320px;
 
@@ -278,8 +280,8 @@ div#content {
             .graphic-text;
             margin-bottom: 30px;
         }
-        h2.us { .sprite(-400px, -299px); }
-        h2.team { .sprite(-400px, -323px); margin-top: 30px; }
+        h2.us { .sprite(-400px, -301px); }
+        h2.team { .sprite(-400px, -325px); margin-top: 30px; }
         ul {
             list-style: none;
             margin-left: 60px;
@@ -315,6 +317,20 @@ footer {
     
     #iphone-slideshow {
 
+        #wallpaper {
+            position: relative;
+            
+            figure#clip {
+                position: absolute;
+                top: 0;
+                right: -15px;
+                width: @clip-width;
+                height: @clip-height;
+                .sprite(-600px, 0px);
+                .graphic-text;
+                z-index: 10000;
+            }
+        }
         #iphone-frame {
             width: @iphone-frame-width;
             height: @iphone-frame-height;

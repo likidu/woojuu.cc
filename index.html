@@ -40,9 +40,14 @@
         </div><!-- end of #content -->
         <footer>
             <section id="iphone-slideshow">
+                <div id="wallpaper">
+                	<figure id="clip">Wallpaper Clip</figure>
+                </div>
                 <div id="iphone-frame">
                     <img src="image/ui-cycle-01.jpg" width="321" height="188" alt="" />
                     <img src="image/ui-cycle-02.jpg" width="321" height="188" alt="" />
+                    <img src="image/ui-cycle-03.jpg" width="321" height="188" alt="" />
+                    <img src="image/ui-cycle-04.jpg" width="321" height="188" alt="" />
                 </div>
             </section>
             <nav>
@@ -55,7 +60,7 @@
                         <a id="weibo" href="http://weibo.com/woojuu" alt="访问莴苣账本微博" target="_blank">Weibo</a>
                     </li>
                     <li>
-                        <a href="http://blog.woojuu.cc" target="_self">博客<a>
+                        <a href="http://woojuu.cc/blog" target="_self">博客<a>
                     </li>
                     <li>
                         <a href="#">联系我们</a>
@@ -83,7 +88,7 @@
             // Pagify
             $('#page_holder').pagify({
                 pages: ['home', 'about', 'faq'],
-                default: 'home',
+                first: 'home',
                 animation: 'fadeIn'
             });
             // Image cycling
@@ -94,7 +99,7 @@
         });
     </script>
     <!-- Google Analytics -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-25654052-1']);
@@ -106,6 +111,6 @@
          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
          })();
 
-     </script>
+     </script> -->
 </body>
 </html>
