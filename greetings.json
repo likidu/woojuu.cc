@@ -1,0 +1,28 @@
+[{
+    "date": "Money",
+    "greeting": "新的一周开始了，加油哦"
+},
+{
+    "date": "Tuesday",
+    "greeting": "今天是周二"
+},
+{   
+    "date": "Wednesday",
+    "greeting": "我是周二的弟弟周三"
+},
+{
+    "date": "Thursday",
+    "greeting": "周四，一切都在紧张有序进行中"
+},
+{
+    "date": "Friday",
+    "greeting": "周末了马上又可以放松一下"
+},
+{
+    "date": "Saturday",
+    "greeting": "周六了，准备怎么放松一下？"
+},
+{
+    "date": "Sunday",
+    "greeting": "明天又要上班了，别玩的太晚哦"
+}]
