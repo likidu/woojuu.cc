@@ -1,10 +1,9 @@
 <uwsgi>
 	<chdir>/home/wwwroot/woojuu.cc/app</chdir>
 	<pythonpath>/home/wwwroot/woojuu.cc</pythonpath>
-	<pythonpath>/home/wwwroot/woojuu.cc/lib/python2.6/site-packages</pythonpath>
 	<module>app</module>
 	<callable>app</callable>
-	<socket>/tmp/uwsgi.sock</socket>
+	<socket>/tmp/uwsgi_woojuu.sock</socket>
 	<chmod-socket>666</chmod-socket>
 	<master />
 	<processes>1</processes>
