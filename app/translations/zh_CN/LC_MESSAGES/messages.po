@@ -1,0 +1,47 @@
+# Chinese (China) translations for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-05-14 10:06+0800\n"
+"PO-Revision-Date: 2012-05-14 10:08+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: app.py:19
+msgid "Monday Monday, it's not always that gloomy, isn't it?"
+msgstr "周一好，新的一周开始了！"
+
+#: app.py:20
+msgid "Happy Tuesday, is everything on track?"
+msgstr "周二，一切可好？"
+
+#: app.py:21
+msgid "It's Wednesday, go go go!"
+msgstr "周三，加油，加油，加油！"
+
+#: app.py:22
+msgid "It's Thursday, why not have a good dinner tonight?"
+msgstr "周四，吃顿好的犒劳一下自己吧。"
+
+#: app.py:23
+msgid "Happy Friday, the weekend is coming."
+msgstr "Happy 周五，终于周末咯！"
+
+#: app.py:24
+msgid "Wow Saturday, how would you like to celebrate it?"
+msgstr "周六，准备去哪里放松一下？"
+
+#: app.py:25
+msgid "It's Sunday, stay tuned for the upcoming great week. Are you ready for it?"
+msgstr "周日，休息，休息一下。"
+

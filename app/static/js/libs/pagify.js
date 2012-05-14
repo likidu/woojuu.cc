@@ -12,6 +12,7 @@
     var self = this;
 
     this.defaults = {
+      'folder': '',
       'pages': [],
       'default': null,
       'animation': 'show',
@@ -40,7 +41,7 @@
         }
         else {
           // Fetch page content
-          $.get(page+'.html', function(content) {
+          $.get(self.settings['folder']+page+'.html', function(content) {
             $(self)[self.settings.animationOut](self.settings.animationOutSpeed, function() {
               $(self).html(content)[self.settings.animation](self.settings.animationSpeed);
             })
@@ -64,7 +65,7 @@
       self.pages = {};
       var pageLoads = self.settings.pages.length;
       $.each(self.settings.pages, function(ndx, page) {
-        $.get(page+'.html', function(content) {
+        $.get(self.settings['folder']+page+'.html', function(content) {
           self.pages[page] = content;
           pageLoads--;
           //alert(pageLoads);

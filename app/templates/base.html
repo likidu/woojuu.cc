@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>莴苣账本——你的iPhone理财助手</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="{{ static('css/style.css') }}">
+	<!-- <link rel="stylesheet/less" type="text/css" href="css/woojuu.less"> -->
+	<link rel="stylesheet" href="{{ static('css/woojuu.css') }}">
+
+	<script src="{{ static('js/libs/modernizr-2.0.6.min.js') }}"></script>
+	<script src="{{ static('js/libs/less-1.3.0.min.js') }}"></script>
+</head>
+<body>
+
+	<div id="wrapper">
+		<header>
+			<nav>
+				<ul>
+					<li class="date">{{ greeting }}</li>
+				</ul>
+			</nav>
+			<hgroup>
+				<h1>Woojuu Logo</h1>
+				<a href="#home"><h2>莴苣账本</h2></a>
+				<a href="http://itunes.apple.com/cn/app/id457874572?mt=8" class="appstore" target="_blank">Download from App Store</a>
+				<figure>免费下载</figure>
+			</hgroup>
+		</header>
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+		<footer>
+			{% block footer %}{% endblock %}
+		</footer>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery-1.7.2.min.js') }}"><\/script>')</script>
+	<script src="{{ static('js/libs/jquery.cycle.lite.js') }}"></script>
+	<script src="{{ static('js/libs/pagify.js') }}"></script>
+	<!-- <script src="js/libs/backbone-min.js"></script> -->
+	<!-- <script src="js/libs/underscore-min.js"></script> -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Pagify
+			$('#page_holder').pagify({
+				folder: '/static/pages/',
+				pages: ['home', 'about', 'faq'],
+				default: 'home',
+				animation: 'fadeIn'
+			});
+			// Image cycling
+			$('#iphone-frame').cycle({
+				fx: 'fade',
+				speed: 1000
+			});
+		});
+	</script>
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25654052-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

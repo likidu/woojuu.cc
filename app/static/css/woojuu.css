@@ -1,0 +1,407 @@
+/*
+ * Woojuu v0.1
+ *
+ * woojuu.less
+ *
+ * 
+ */
+/* ---------------------------------- */
+/*
+ *  TABLE OF CONTENTS
+ *  
+ *  @Grid
+ *  @FontFace
+ *  @Global
+ *  @Wrapper
+ *  @Sidebar
+ *  @Masthead
+ *  @Nav
+ *  @Lines
+ *  @GlobalExperience
+ *  @Proof-Points
+ *  @Footer
+ *  @Icons
+ *  @Clear
+ *
+ */
+/* ---------------------------------- */
+/* @Grid */
+body {
+  width: 100%;
+  float: left;
+}
+/* ---------------------------------- */
+/* @Variables */
+/* ---------------------------------- */
+/* @Mixins */
+.container-padding {
+  padding: 0 37px;
+}
+.graphic-text {
+  text-indent: -9999px;
+}
+.text-shadow {
+  text-shadow: 0 1px 0 #fff;
+}
+.highlight-content {
+  position: absolute;
+  top: -4px;
+  left: 135px;
+  width: 390px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  text-shadow: 0 1px 0 #fff;
+}
+.content-list {
+  margin: 0 88px;
+}
+/* ---------------------------------- */
+/* @FontFace*/
+/* ---------------------------------- */
+/* @Global */
+body {
+  background-image: url('../image/bg-woojuu-loop.jpg');
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #303030;
+  text-decoration: none;
+}
+a:active,
+a:visited {
+  color: #303030;
+}
+a:hover {
+  border-bottom: solid 1px #303030;
+}
+::-moz-selection {
+  background: #aeda50;
+}
+::selection {
+  background: #aeda50;
+}
+/* ---------------------------------- */
+/* @Wrapper */
+div#wrapper {
+  width: 774px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+/* ---------------------------------- */
+/* @Header */
+header {
+  padding: 0 37px;
+  background: url('../image/bg-paper-header.png') 0 0 no-repeat;
+}
+header nav {
+  line-height: 33px;
+  margin: 0 25px;
+}
+header nav li.date {
+  color: #949494;
+  text-shadow: 0 1px 0 #fff;
+}
+header hgroup {
+  position: relative;
+  padding-top: 20px;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px -700px;
+  background-repeat: no-repeat;
+}
+header hgroup h1 {
+  width: 228px;
+  height: 228px;
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  margin-left: 82px;
+}
+header hgroup h2 {
+  position: absolute;
+  top: 54px;
+  left: 344px;
+  width: 266px;
+  height: 67px;
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -250px 0px;
+  background-repeat: no-repeat;
+}
+header hgroup a.appstore {
+  display: block;
+  position: absolute;
+  top: 145px;
+  left: 396px;
+  width: 160px;
+  height: 53px;
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -100px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+header hgroup a.appstore:hover {
+  text-decoration: none;
+  border: none;
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -154px;
+  background-repeat: no-repeat;
+}
+header hgroup a.appstore:active {
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -208px;
+  background-repeat: no-repeat;
+}
+header hgroup figure {
+  position: absolute;
+  top: 20px;
+  right: -34.5px;
+  width: 109px;
+  height: 109px;
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -250px -100px;
+  background-repeat: no-repeat;
+}
+/* ---------------------------------- */
+/* @Content */
+div#content {
+  padding: 0 37px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: url('../image/bg-paper-loop.png') repeat-y left top;
+  /* @Hightlights */
+
+  /* ---------------------------------- */
+
+  /* @FAQ */
+
+  /* ---------------------------------- */
+
+  /* @About Us */
+
+}
+div#content ul#highlights {
+  list-style: none;
+  margin: 0 88px;
+}
+div#content ul#highlights li {
+  position: relative;
+  margin-bottom: 40px;
+}
+div#content ul#highlights li h2 {
+  width: 110px;
+  height: 25px;
+}
+div#content ul#highlights li p {
+  position: absolute;
+  top: -4px;
+  left: 135px;
+  width: 390px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  text-shadow: 0 1px 0 #fff;
+}
+div#content ul#highlights li#highlight-ui h2 {
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -250px -250px;
+  background-repeat: no-repeat;
+}
+div#content ul#highlights li#highlight-budget h2 {
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -250px -275px;
+  background-repeat: no-repeat;
+}
+div#content ul#highlights li#highlight-seconds h2 {
+  text-indent: -9999px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -250px -300px;
+  background-repeat: no-repeat;
+}
+div#content #faq {
+  margin: 0 88px;
+}
+div#content #faq h2 {
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -275px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  margin-bottom: 30px;
+}
+div#content #faq ul {
+  list-style: none;
+}
+div#content #faq ul li {
+  margin-top: 30px;
+}
+div#content #faq ul li h2 {
+  text-shadow: 0 1px 0 #fff;
+}
+div#content #faq ul a {
+  color: #666;
+}
+div#content #faq p {
+  line-height: 20px;
+}
+div#content #about-us {
+  margin: 0 88px;
+}
+div#content #about-us h2 {
+  text-indent: -9999px;
+  margin-bottom: 30px;
+}
+div#content #about-us h2.us {
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -301px;
+  background-repeat: no-repeat;
+}
+div#content #about-us h2.team {
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -325px;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+}
+div#content #about-us ul {
+  list-style: none;
+  margin-left: 60px;
+}
+div#content #about-us ul li {
+  position: relative;
+}
+div#content #about-us ul li figure {
+  position: absolute;
+  top: 0;
+  left: -60px;
+}
+div#content #about-us ul li#about-liki figure {
+  width: 42px;
+  height: 48px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -400px -375px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+div#content #about-us ul li#about-rome figure {
+  width: 42px;
+  height: 48px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -454px -375px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+div#content #about-us ul li#about-daisy figure {
+  width: 42px;
+  height: 48px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -503px -375px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+div#content #about-us ul li#about-grace figure {
+  width: 42px;
+  height: 48px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -555px -375px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+div#content #about-us p {
+  line-height: 20px;
+}
+/* ---------------------------------- */
+/* @Footer */
+footer {
+  padding: 0 37px;
+  background: url('../image/bg-paper-footer.png') no-repeat left bottom;
+  padding-bottom: 30px;
+}
+footer #iphone-slideshow #wallpaper {
+  position: relative;
+}
+footer #iphone-slideshow #wallpaper figure#clip {
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 47px;
+  height: 49px;
+  background-image: url('../image/css-sprite.png');
+  background-position: -600px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  z-index: 10000;
+}
+footer #iphone-slideshow #iphone-frame {
+  width: 380px;
+  height: 320px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px -350px;
+  background-repeat: no-repeat;
+}
+footer #iphone-slideshow #iphone-frame img {
+  margin-left: 32px;
+  margin-top: 132px;
+}
+footer nav {
+  height: 33px;
+  padding-top: 20px;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px -700px;
+  background-repeat: no-repeat;
+}
+footer nav ul {
+  margin: 0 25px;
+}
+footer nav ul#jingxifang li {
+  float: left;
+  margin-right: 10px;
+}
+footer nav ul#about li {
+  float: right;
+  margin-left: 24px;
+}
+footer nav a#weibo {
+  display: block;
+  width: 19px;
+  height: 17px;
+  margin: -2px;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px -250px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+footer nav a#weibo:hover {
+  border: none;
+  background-image: url('../image/css-sprite.png');
+  background-position: 0px -275px;
+  background-repeat: no-repeat;
+}

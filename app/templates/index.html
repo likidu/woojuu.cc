@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div id="page_holder"></div>
+{% endblock %}
+
+{% block footer %}
+<section id="iphone-slideshow">
+	<div id="wallpaper">
+		<figure id="clip">Wallpaper Clip</figure>
+	</div>
+	<div id="iphone-frame">
+		<img src="{{ static('image/ui-cycle-01.jpg') }}" width="321" height="188" alt="" />
+		<img src="{{ static('image/ui-cycle-02.jpg') }}" width="321" height="188" alt="" />
+		<img src="{{ static('image/ui-cycle-03.jpg') }}" width="321" height="188" alt="" />
+		<img src="{{ static('image/ui-cycle-04.jpg') }}" width="321" height="188" alt="" />
+	</div>
+</section>
+<nav>
+	<ul id="jingxifang">
+		<li>&copy; 2011-2012</li>
+		<li><strong>精细坊</strong></li>
+	</ul>
+	<ul id="about">
+		<li>
+			<a id="weibo" href="http://weibo.com/woojuu" alt="访问莴苣账本微博" target="_blank">Weibo</a>
+		</li>
+		<li>
+			<a href="http://woojuu.cc/blog" target="_self">博客<a>
+		</li>
+		<li>
+			<a href="mailto:liki@woojuu.cc">联系我们</a>
+		</li>
+		<li>
+			<a href="#faq">常见问题</a>
+		</li>
+		<li>
+			<a href="#about">团队</a>
+		</li>
+		<li>
+			<a href="#">首页</a>
+		</li>
+	</ul>
+</nav>
+{% endblock %}
