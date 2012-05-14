@@ -17,14 +17,6 @@ app.jinja_env.globals.update(static=static)
 
 babel = Babel(app)
 
-# greeting_words = [gettext("Monday Monday, it's not always that gloomy, isn't it?"),
-# 				gettext("Happy Tuesday, is everything on track?"),
-# 				gettext("It's Wednesday, go go go!"),
-# 				gettext("It's Thursday, why not have a good dinner tonight?"),
-# 				gettext("Happy Friday, the weekend is coming."),
-# 				gettext("Wow Saturday, how would you like to celebrate it?"),
-# 				gettext("It's Sunday, stay tuned for the upcoming great week. Are you ready for it?")]
-
 greeting_words = ["Monday Monday, it's not always that gloomy, isn't it?",
 				"Happy Tuesday, is everything on track?",
 				"It's Wednesday, go go go!",
