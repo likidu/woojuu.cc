@@ -11,7 +11,7 @@ def static(filename):
 	return "%s/%s?%s" % (app.static_url_path, filename, timestamp)
 
 app = Flask(__name__)
-app.config.from_object("settings_rel")
+app.config.from_object("settings_dev")
 app.static_url_path = app.config["STATIC_URL"]
 app.jinja_env.globals.update(static=static)
 
