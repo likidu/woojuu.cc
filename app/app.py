@@ -24,11 +24,19 @@ greeting_words = ["Monday Monday, it's not always that gloomy, isn't it?",
 				"Happy Friday, the weekend is coming.",
 				"Wow Saturday, how would you like to celebrate it?",
 				"It's Sunday, stay tuned for the upcoming great week. Are you ready for it?"]
+greeting = gettext(greeting_words[date.today().weekday()])
 
 @app.route('/')
 def main():
-	greeting = gettext(greeting_words[date.today().weekday()])
 	return render_template("index.html", greeting=greeting)
+
+@app.route('/about')
+def about():
+	return render_template("about.html", greeting=greeting)
+
+@app.route('/faq')
+def faq():
+	return render_template("faq.html", greeting=greeting)
 
 @app.errorhandler(404)
 def page_not_found(error):
