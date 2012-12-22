@@ -75,18 +75,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery-1.8.3.min.js') }}"><\/script>')</script>
 	<script src="{{ static('js/libs/jquery.cycle.lite.js') }}"></script>
-	<script src="{{ static('js/libs/pagify.js') }}"></script>
-	<!-- <script src="js/libs/backbone-min.js"></script> -->
-	<!-- <script src="js/libs/underscore-min.js"></script> -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			// Pagify
-			$('#page_holder').pagify({
-				folder: '/static/pages/',
-				pages: ['home', 'about', 'faq'],
-				default: 'home',
-				animation: 'fadeIn'
-			});
 			// Image cycling
 			$('.slideshow').cycle({
 				fx: 'fade',
