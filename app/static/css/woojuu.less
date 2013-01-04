@@ -108,26 +108,31 @@
 /* @Mixins for Sprites */
 .sprite-app-store-hover { .sprite(0px, 0px); .is-graphic-text; width: 160px; height: 54px; } 
 .sprite-app-store-normal { .sprite(0px, -104px); .is-graphic-text; width: 160px; height: 54px; } 
-.sprite-bg-paper-footer { .sprite(0px, -208px); height: 285px;} 
-.sprite-dashed-line { .sprite(-824px, -1003px); } 
+.sprite-bg-paper-footer { .sprite(0px, -208px); width:774px; height: 285px;} 
+.sprite-dashed-line { .sprite(-824px, -1490px); } 
 .sprite-highlight-3-seconds { .sprite(0px, -543px); .is-graphic-text; } 
 .sprite-highlight-budget-mode{ .sprite(0px, -618px); .is-graphic-text; } 
 .sprite-highlight-sleek-ui { .sprite(0px, -693px); .is-graphic-text; } 
 .sprite-highlight-whats-more { .sprite(0px, -768px); .is-graphic-text; } 
 .sprite-iphone5-base { .sprite(0px, -843px); .is-graphic-text; width: 275px; height: 570px; } 
 .sprite-iphone5-glare-overlay { .sprite(0px, -1463px); .is-graphic-text; width: 153px; height: 423px; } 
-.sprite-member-daisy { .sprite(0px, -1936px); .is-graphic-text; width: 44px; height: 49px; } 
-.sprite-member-grace { .sprite(-824px, -0px); .is-graphic-text; width: 44px; height: 49px; } 
-.sprite-member-liki { .sprite(-824px, -99px); .is-graphic-text; width: 40px; height: 49px; } 
-.sprite-member-rome { .sprite(-824px, -198px); .is-graphic-text; width: 38px; height: 49px; } 
-.sprite-name-art { .sprite(-824px, -297px); .is-graphic-text; width: 187px; height: 48px; } 
-.sprite-slogan { .sprite(-824px, -395px); .is-graphic-text;  width: 270px; height: 52px; } 
-.sprite-stamp { .sprite(-824px, -497px); .is-graphic-text; width: 203px; height: 97px; } 
-.sprite-txt-about-us { .sprite(-824px, -644px); .is-graphic-text; width: 96px; height: 25px; } 
-.sprite-txt-faq { .sprite(-824px, -719px); .is-graphic-text; width: 152px; height: 25px; } 
-.sprite-txt-team { .sprite(-824px, -794px); .is-graphic-text; width: 94px; height: 25px; } 
-.sprite-weibo-hover { .sprite(-824px, -869px); .is-graphic-text; width: 20px; height: 17px; } 
-.sprite-weibo-normal { .sprite(-824px, -936px); .is-graphic-text; width: 20px; height: 17px; } 
+.sprite-name-art { .sprite(0px, -1936px); .is-graphic-text; width: 187px; height: 48px; }
+.sprite-portrait-ada { .sprite(-824px, 0px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-daisy { .sprite(-824px, -98px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-grace { .sprite(-824px, -196px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-liangying { .sprite(-824px, -294px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-liki { .sprite(-824px, -392px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-majun { .sprite(-824px, -490px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-ning { .sprite(-824px, -588px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-rome { .sprite(-824px, -686px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-yingbin { .sprite(-824px, -784px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-slogan { .sprite(-824px, -882px); .is-graphic-text;  width: 270px; height: 52px; } 
+.sprite-stamp { .sprite(-824px, -984px); .is-graphic-text; width: 203px; height: 97px; } 
+.sprite-txt-about-us { .sprite(-824px, -1131px); .is-graphic-text; width: 96px; height: 25px; } 
+.sprite-txt-faq { .sprite(-824px, -1206px); .is-graphic-text; width: 152px; height: 25px; } 
+.sprite-txt-team { .sprite(-824px, -1281px); .is-graphic-text; width: 94px; height: 25px; } 
+.sprite-weibo-hover { .sprite(-824px, -1356px); .is-graphic-text; width: 20px; height: 17px; } 
+.sprite-weibo-normal { .sprite(-824px, -1423px); .is-graphic-text; width: 20px; height: 17px; } 
 
 /* ---------------------------------- */
 
@@ -371,16 +376,19 @@ header {
                 figure { position: absolute; top: 0; left: -60px; }
             }
             li#about-liki {
-                figure { .sprite-member-liki; }
+                figure { .sprite-portrait-liki; }
             }
             li#about-rome {
-                figure { .sprite-member-rome; }
+                figure { .sprite-portrait-rome; }
             }
             li#about-daisy {
-                figure{ .sprite-member-daisy; }
+                figure{ .sprite-portrait-daisy; }
             }
-            li#about-grace {
-                figure { .sprite-member-grace; }
+            li#about-liangying {
+                figure { .sprite-portrait-liangying; }
+            }
+            li#about-yingbin {
+                figure { .sprite-portrait-yingbin; }
             }
         }
         p { line-height: 20px; }

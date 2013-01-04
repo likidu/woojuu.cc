@@ -1,15 +1,15 @@
 # Chinese (China) translations for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
+# Copyright (C) 2013 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-05-14 10:06+0800\n"
-"PO-Revision-Date: 2012-05-14 10:08+0800\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-01-04 13:43+0800\n"
+"PO-Revision-Date: 2013-01-04 14:00+0800\n"
+"Last-Translator: LIKI <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
@@ -17,31 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: app.py:19
+#: app.py:20
 msgid "Monday Monday, it's not always that gloomy, isn't it?"
-msgstr "周一好，新的一周开始了！"
+msgstr "周一，新的一周开始了！"
 
 #: app.py:20
 msgid "Happy Tuesday, is everything on track?"
 msgstr "周二，一切可好？"
 
-#: app.py:21
+#: app.py:20
 msgid "It's Wednesday, go go go!"
 msgstr "周三，加油，加油，加油！"
 
-#: app.py:22
+#: app.py:20
 msgid "It's Thursday, why not have a good dinner tonight?"
 msgstr "周四，吃顿好的犒劳一下自己吧。"
 
-#: app.py:23
+#: app.py:20
 msgid "Happy Friday, the weekend is coming."
-msgstr "Happy 周五，终于周末咯！"
+msgstr "周五，终于周末咯！"
 
-#: app.py:24
+#: app.py:20
 msgid "Wow Saturday, how would you like to celebrate it?"
 msgstr "周六，准备去哪里放松一下？"
 
-#: app.py:25
+#: app.py:20
 msgid "It's Sunday, stay tuned for the upcoming great week. Are you ready for it?"
 msgstr "周日，休息，休息一下。"
+
+#: templates/base.html:32
+#, python-format
+msgid "I'm %(greeting)s haha."
+msgstr "我是%(greeting)s，哈哈！"
 
