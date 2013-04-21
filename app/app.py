@@ -1,7 +1,7 @@
 from flask.app import Flask
 from flask.globals import request
 from flask.templating import render_template
-from flaskext.babel import Babel, gettext as _
+from flask.ext.babel import Babel, gettext as _
 from datetime import date, datetime
 import sys, os
 
