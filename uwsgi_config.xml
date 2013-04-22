@@ -1,6 +1,6 @@
 <uwsgi>
 	<chdir>/home/wwwroot/woojuu.cc/app</chdir>
-	<pythonpath>/home/wwwroot/woojuu.cc</pythonpath>
+	<pythonpath>/home/virtualenvs/woojuu.cc</pythonpath>
 	<module>app</module>
 	<callable>app</callable>
 	<socket>/tmp/uwsgi_woojuu.sock</socket>
