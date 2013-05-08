@@ -1,5 +1,5 @@
 /*
- * Woojuu v0.3
+ * Woojuu v0.4
  *
  * woojuu.less
  *
@@ -65,13 +65,18 @@
 
 /* ---------------------------------- */
 /* @Mixins */
-.middle-align (@margin: auto) {
+.center-block (@margin: auto) {
+	display: block;
     margin: 0 @margin;
     padding: 0;
-    overflow: hidden;
 }
 .sprite (@left: 0, @top: 0) {
-    background-image: url('../images/css-sprite.png');
+    background-image: url('../img/css-sprite.png');
+    background-position: @left @top;
+    background-repeat: no-repeat;
+}
+.sprite-wechat (@left: 0, @top: 0) {
+    background-image: url('../img/css-sprite-wechat.png');
     background-position: @left @top;
     background-repeat: no-repeat;
 }
@@ -82,7 +87,7 @@
     text-shadow: 0 1px 0 #fff;
 }
 .bigger-text {
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.8em;
 }
 .content-list {
@@ -100,9 +105,25 @@
 .column {
     float: left;
 }
-.no-selectable {
-    -webkit-user-select: none; // test
-    -moz-user-select: none;
+// User select
+// For selecting text on the page
+.user-select (@select) {
+	-webkit-user-select: @select;
+	-moz-user-select: @select;
+	-ms-user-select: @select;
+	-o-user-select: @select;
+	user-select: @select;
+}
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+// Source: https://github.com/twitter/bootstrap/blob/master/less/mixins.less
+.hide-text () {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
 }
 
 /* @Mixins for Sprites */
@@ -132,7 +153,13 @@
 .sprite-txt-faq { .sprite(-824px, -1206px); .is-graphic-text; width: 152px; height: 25px; } 
 .sprite-txt-team { .sprite(-824px, -1281px); .is-graphic-text; width: 94px; height: 25px; } 
 .sprite-weibo-hover { .sprite(-824px, -1356px); .is-graphic-text; width: 20px; height: 17px; } 
-.sprite-weibo-normal { .sprite(-824px, -1423px); .is-graphic-text; width: 20px; height: 17px; } 
+.sprite-weibo-normal { .sprite(-824px, -1423px); .is-graphic-text; width: 20px; height: 17px; }
+
+.sprite-wechat-clip{ .sprite-wechat(0, 0); width: 55px; height: 62px; }
+.sprite-wechat-complain{ .sprite-wechat(0, -112px); width: 302px; height: 226px; }
+.sprite-wechat-receipts{ .sprite-wechat(0, -388px); width: 124px; height: 163px; }
+.sprite-wechat-slogan{ .sprite-wechat(0, -601px); width: 297px; height: 25px; }
+.sprite-wechat-ww{ .sprite-wechat(0, -676px); width: 579px; height: 234px; }
 
 /* ---------------------------------- */
 
@@ -141,12 +168,18 @@
 /* ---------------------------------- */
 
 /* @Global */
-body {
-    background-image: url('../images/bg-woojuu-loop.jpg');
+html {
+	 background: url('../img/bg-woojuu-loop.jpg') left top repeat;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { margin: 0; }
+body {
+	font-family: 'Helvetica Neue', 'Hiragino Sans GB', Helvetica, STHeiti, Microsoft YaHei, SimHei, Arial, sans-serif;
+	font-size: 62.5%;
+}
 h1, h2, h3 { margin: 0; }
 ul, ol { margin: 0; padding: 0; }
+ul, li {
+	list-style: none;
+}
 a {
     color: @link-color;
     text-decoration: none;
@@ -158,6 +191,18 @@ a {
         border-bottom: solid 1px @link-green-color;
     }
 }
+i {
+	display: block;
+	margin: 0;
+	padding: 0;
+	.hide-text();
+}
+hr {
+	clear: both;
+	border: none;
+	float: none;
+	overflow: hidden;
+}
 
 
 ::-moz-selection { background: @selection-color; }
@@ -168,7 +213,7 @@ a {
 /* @Wrapper */
 .wrapper {
     width: 774px;
-    .middle-align;
+	.center-block;
 }
 
 /* ---------------------------------- */
@@ -177,7 +222,7 @@ a {
 
 /* @Wrapper > @Shadow */
 .shadow {
-    background: url('../images/bg-paper-shadow.png') 0 50% no-repeat;
+    background: url('../img/bg-paper-shadow.png') 0 50% no-repeat;
 }
 
 /* ---------------------------------- */
@@ -185,16 +230,16 @@ a {
 /* @Wrapper > @Shadow > @Main */
 .main {
     width: 700px;
-    .middle-align;
-    background: url('../images/bg-paper-loop.jpg') 0 50% repeat-y;
+	.center-block;
+    background: url('../img/bg-paper-loop.jpg') 0 50% repeat-y;
 }
 
 /* ---------------------------------- */
 
 /* @Header */
 header {
-
-    nav {
+	font-size: 1.4em;
+	nav {
         line-height: @nav-height;
         margin: 0 @nav-margin;
 
@@ -203,18 +248,32 @@ header {
             .text-shadow;
         }
     }
+	hr {
+		margin: 0;
+		height: 2px;
+		.sprite-dashed-line;
+	}
 }
 /* ---------------------------------- */
 
 /* @Content */
 #content {
-    background: url('../images/bg-paper-header.jpg') 0 0 no-repeat;
+    background: url('../img/bg-paper-header.jpg') 0 0 no-repeat;
+
+	header {
+		ul {
+			overflow: hidden;
+		}
+		li {
+			float: left;
+			margin-right: 30px;
+		}
+	}
 
     /* @Introduction */
     #introduction {
         .relative;
-        .no-selectable;
-        .sprite-dashed-line;
+       	.user-select(none);
         height: @introduction-height;
         overflow: hidden;
 
@@ -232,8 +291,8 @@ header {
                 h1 { .sprite-name-art; }
                 .version {
                     .absolute;
-                    top: @name-height - 15px;
-                    left: @name-width + 15px;
+                    top: (@name-height - 15px);
+                    left: (@name-width + 15px);
                 }               
             }
 
@@ -281,7 +340,7 @@ header {
     /* @Hightlights */
     #highlights {
         .sprite-dashed-line;
-        .no-selectable;
+        .user-select(none);
         padding: 12px 50px 0;
         overflow: hidden;
 
@@ -306,9 +365,9 @@ header {
             .second {
                 float: right;
             }
-            p { 
+            p {
+				font-size: 1.4em;
                 .text-shadow; 
-                .bigger-text;
             }
             #highlight-sleek-ui {
                 h2 { .sprite-highlight-sleek-ui; }
@@ -328,8 +387,8 @@ header {
     
     /* @FAQ */
     #faq {
+		.bigger-text;
         .content-list;
-        .sprite-dashed-line;
 
         a { color: @link-green-color; }
 
@@ -346,12 +405,61 @@ header {
                 h2 { .text-shadow; }
             }
         }
-        p { line-height: 20px; }
+        p { line-height: 1.8em; }
+		p.last { margin-bottom: 0; }
     }
+
+    /* ---------------------------------- */
+
+    /* @WeChat */
+	#wechat {
+		position: relative;
+		width: 600px;
+		.center-block();
+
+		.receipts {
+			position: absolute;
+			right: -76px;
+			top: -10px;
+			.sprite-wechat-receipts;
+			z-index: 1000;
+		}
+		.clip {
+			position: absolute;
+			right: -70px;
+			top: 0;
+			.sprite-wechat-clip;
+			z-index: 1001;
+		}
+		aside, p {
+			font-size: 1.4em;
+		}
+		aside {
+			text-align: center;
+			margin-top: 15px;
+		}
+		p#complain {
+			.sprite-wechat-complain;
+			.hide-text();
+			margin-top: 40px;
+		}
+		figure#ww {
+			.sprite-wechat-ww;
+			.hide-text();
+			margin-top: -40px;
+		}
+		p#slogan-wechat {
+			.sprite-wechat-slogan;
+			.hide-text();
+			.center-block();
+			margin-top: 60px;
+		}
+	}
 
     /* ---------------------------------- */
     
     /* @About Us */
+	/*
     #about-us {
         .content-list;
         .sprite-dashed-line;
@@ -392,7 +500,7 @@ header {
             }
         }
         p { line-height: 20px; }
-    }
+    }*/
 }
 
 /* ---------------------------------- */
@@ -402,7 +510,8 @@ header {
 
 footer {
     width: 700px;
-    .middle-align;
+	font-size: 1.4em;
+	.center-block;
     
     .end {
         .relative;

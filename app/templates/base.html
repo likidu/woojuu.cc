@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="">
+	<link rel="shortcut icon" href="{{ static('img/favicon.ico') }}" />
 
 	<title>莴苣账本 — 记账，一个就够了</title>
 	<meta name="description" content="">
@@ -13,15 +14,10 @@
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="stylesheet" href="{{ static('css/style.css') }}">
-	<!-- <link rel="stylesheet/less" type="text/css" href="css/woojuu.less"> -->
+	<link rel="stylesheet" href="{{ static('css/normalize.css') }}">
 	<link rel="stylesheet" href="{{ static('css/woojuu.css') }}">
-
-	<script src="{{ static('js/libs/modernizr.min.js') }}"></script>
-	<script src="{{ static('js/libs/less.min.js') }}"></script>
 </head>
 <body>
-
 	<div class="wrapper">
 		<div class="shadow">
 			<div class="main">
@@ -29,9 +25,11 @@
 					<header>
 						<nav>
 							<ul>
-								<li class="date">{{ _("%(greeting)s", greeting=greeting) }}</li>
+								<li><a href="/">莴苣账本</a></li>
+								<li><a href="/wechat">莴苣账本微信助手</a></li>
 							</ul>
 						</nav>
+						<hr />
 					</header>
 					{% block content %}{% endblock %}
 				</div>				
@@ -52,16 +50,10 @@
 							<a id="weibo" href="http://weibo.com/woojuu" alt="访问莴苣账本微博" target="_blank">Weibo</a>
 						</li>
 						<li>
-							<a href="http://woojuu.diandian.com/" target="_self">博客<a>
-						</li>
-						<li>
 							<a href="mailto:hello@woojuu.cc">联系我们</a>
 						</li>
 						<li>
 							<a href="/faq">常见问题</a>
-						</li>
-						<li>
-							<a href="/about">团队</a>
 						</li>
 						<li>
 							<a href="/">首页</a>
@@ -73,8 +65,8 @@
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery-1.8.3.min.js') }}"><\/script>')</script>
-	<script src="{{ static('js/libs/jquery.cycle.lite.js') }}"></script>
+	<script>window.jQuery || document.write('<script src="{{ static('js/lib/jquery-1.8.3.min.js') }}"><\/script>')</script>
+	<script src="{{ static('js/lib/jquery.cycle.lite.js') }}"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			// Image cycling
