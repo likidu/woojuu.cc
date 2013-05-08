@@ -1,45 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div id="page_holder"></div>
-{% endblock %}
-
-{% block footer %}
-<section id="iphone-slideshow">
-	<div id="wallpaper">
-		<figure id="clip">Wallpaper Clip</figure>
-	</div>
-	<div id="iphone-frame">
-		<img src="{{ static('image/ui-cycle-01.jpg') }}" width="321" height="188" alt="" />
-		<img src="{{ static('image/ui-cycle-02.jpg') }}" width="321" height="188" alt="" />
-		<img src="{{ static('image/ui-cycle-03.jpg') }}" width="321" height="188" alt="" />
-		<img src="{{ static('image/ui-cycle-04.jpg') }}" width="321" height="188" alt="" />
-	</div>
-</section>
-<nav>
-	<ul id="jingxifang">
-		<li>&copy; 2011-2012</li>
-		<li><strong>精细坊</strong></li>
-	</ul>
-	<ul id="about">
-		<li>
-			<a id="weibo" href="http://weibo.com/woojuu" alt="访问莴苣账本微博" target="_blank">Weibo</a>
-		</li>
-		<li>
-			<a href="http://woojuu.diandian.com/" target="_self">博客<a>
-		</li>
-		<li>
-			<a href="mailto:hello@woojuu.cc">联系我们</a>
-		</li>
-		<li>
-			<a href="#faq">常见问题</a>
-		</li>
-		<li>
-			<a href="#about">团队</a>
-		</li>
-		<li>
-			<a href="#">首页</a>
-		</li>
-	</ul>
-</nav>
+<div id="introduction">
+    <div id="title">
+        <div class="name">
+            <h1>莴苣账本</h1>
+            <a href="#release" class="version" target="_self">v0.7</a>            
+        </div>
+        <h2>一个清新简洁的记账应用，就够了。</h2>
+        <p class="download">
+            <a href="http://itunes.apple.com/cn/app/id457874572?mt=8" target="_blank">Download from App Store</a>
+        </p>
+    </div>
+    <aside id="gallery">
+    	<div class="glare">Glaring</div>
+    	<div class="slideshow">
+	        <img src="{{ static('img/screen-1.jpg') }}" width="229" height="406" alt="" />
+	        <img src="{{ static('img/screen-2.jpg') }}" width="229" height="406" alt="" />
+	        <img src="{{ static('img/screen-3.jpg') }}" width="229" height="406" alt="" />
+	        <img src="{{ static('img/screen-4.jpg') }}" width="229" height="406" alt="" />
+    	</div>
+    </aside>
+</div>
+<aside id="highlights">
+    <ul class="grid2col">
+        <li id="highlight-3-seconds" class="block column first">
+            <h2>三秒记账</h2>
+            <p>3秒钟就可以记录一笔开支。弹指一挥间，让记账不再成为你的负担。</p>
+        </li>
+        <li id="highlight-budget-mode" class="block column second">
+            <h2>记账习惯</h2>
+            <p>设置每月预算，帮你有效控制消费，养成理财好习惯。</p>
+        </li>
+    </ul>
+    <ul class="grid2col">
+        <li id="highlight-sleek-ui" class="block column first">
+            <h2>精细界面</h2>
+            <p>精于心，细于型。让你拥有一款配得上你心爱的iPhone的记账软件。</p>
+        </li>
+        <li id="highlight-whats-more" class="block column second">
+            <h2>还有还有</h2>
+            <p>密码保护，记账提醒，iPhone5的支持... 你会需要的。</p>
+        </li>
+    </ul>
+</aside>
 {% endblock %}

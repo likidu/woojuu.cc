@@ -5,62 +5,72 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="">
+	<link rel="shortcut icon" href="{{ static('img/favicon.ico') }}" />
 
-	<title>莴苣账本——你的iPhone理财助手</title>
+	<title>莴苣账本 — 记账，一个就够了</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="stylesheet" href="{{ static('css/style.css') }}">
-	<!-- <link rel="stylesheet/less" type="text/css" href="css/woojuu.less"> -->
+	<link rel="stylesheet" href="{{ static('css/normalize.css') }}">
 	<link rel="stylesheet" href="{{ static('css/woojuu.css') }}">
-
-	<script src="{{ static('js/libs/modernizr.min.js') }}"></script>
-	<script src="{{ static('js/libs/less.min.js') }}"></script>
 </head>
 <body>
-
-	<div id="wrapper">
-		<header>
-			<nav>
-				<ul>
-					<li class="date">{{ greeting }}</li>
-				</ul>
-			</nav>
-			<hgroup>
-				<h1>Woojuu Logo</h1>
-				<a href="#home"><h2>莴苣账本</h2></a>
-				<a href="http://itunes.apple.com/cn/app/id457874572?mt=8" class="appstore" target="_blank">Download from App Store</a>
-				<figure>免费下载</figure>
-			</hgroup>
-		</header>
-		<div id="content">
-			{% block content %}{% endblock %}
+	<div class="wrapper">
+		<div class="shadow">
+			<div class="main">
+				<div id="content">
+					<header>
+						<nav>
+							<ul>
+								<li><a href="/">莴苣账本</a></li>
+								<li><a href="/wechat">莴苣账本微信助手</a></li>
+							</ul>
+						</nav>
+						<hr />
+					</header>
+					{% block content %}{% endblock %}
+				</div>				
+			</div>
 		</div>
-		<footer>
-			{% block footer %}{% endblock %}
-		</footer>
+		<div class="ft">
+			<footer>
+				<section class="end">
+					<div class="stamp">End symbol</div>
+				</section>
+				<nav>
+					<ul id="jingxifang">
+						<li>&copy; 2011-2012</li>
+						<li><strong>精细坊</strong></li>
+					</ul>
+					<ul id="about">
+						<li>
+							<a id="weibo" href="http://weibo.com/woojuu" alt="访问莴苣账本微博" target="_blank">Weibo</a>
+						</li>
+						<li>
+							<a href="mailto:hello@woojuu.cc">联系我们</a>
+						</li>
+						<li>
+							<a href="/faq">常见问题</a>
+						</li>
+						<li>
+							<a href="/">首页</a>
+						</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery-1.8.3.min.js') }}"><\/script>')</script>
-	<script src="{{ static('js/libs/jquery.cycle.lite.js') }}"></script>
-	<script src="{{ static('js/libs/pagify.js') }}"></script>
-	<!-- <script src="js/libs/backbone-min.js"></script> -->
-	<!-- <script src="js/libs/underscore-min.js"></script> -->
+	<script>window.jQuery || document.write('<script src="{{ static('js/lib/jquery-1.8.3.min.js') }}"><\/script>')</script>
+	<script src="{{ static('js/lib/jquery.cycle.lite.js') }}"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			// Pagify
-			$('#page_holder').pagify({
-				folder: '/static/pages/',
-				pages: ['home', 'about', 'faq'],
-				default: 'home',
-				animation: 'fadeIn'
-			});
 			// Image cycling
-			$('#iphone-frame').cycle({
+			$('.slideshow').cycle({
 				fx: 'fade',
 				speed: 1000
 			});

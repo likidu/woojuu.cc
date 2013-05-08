@@ -1,5 +1,5 @@
 /*
- * Woojuu v0.1
+ * Woojuu v0.4
  *
  * woojuu.less
  *
@@ -44,75 +44,123 @@
 
 /* @Variables */
 @link-color:            #303030;
+@link-green-color:      #3b7d00;
 @selection-color:       #aeda50;
 @date-color:            #949494;
 
 @nav-height:            33px;
 @nav-margin:            25px;
 
-@hgroup-padding-top:    20px;
-
-@logo-size:             228px;
-@logo-margin:           82px;
-
 @name-logo-gap:         34px;
-@name-width:            266px;
-@name-height:           67px;
-
-@free-badge-size:       111px;
-
-@appstore-logo-gap:     86px;
-
-@free-badge-size:       109px;
+@name-width:            187px;
+@name-height:           48px;
 
 @appstore-width:        160px;
-@appstore-height:       53px;
+@appstore-height:       54px;
 
-@content-padding:       40px;   
-@highlight-width:       110px;
-@highlight-height:      25px;
-@highlight-title-offset:  25px;
+@introduction-height:   488px;
 
-@clip-width:            47px;
-@clip-height:           49px;
-@iphone-frame-width:    380px;
-@iphone-frame-height:   320px;
+@column-width:          255px;
+@column-height:          90px;
 
 /* ---------------------------------- */
-
 /* @Mixins */
-.middle-align (@margin: auto) {
+.center-block (@margin: auto) {
+	display: block;
     margin: 0 @margin;
     padding: 0;
-    overflow: hidden;
-}
-.container-padding {
-    padding: 0 37px;
 }
 .sprite (@left: 0, @top: 0) {
-    background-image: url('../image/css-sprite.png');
+    background-image: url('../img/css-sprite.png');
     background-position: @left @top;
     background-repeat: no-repeat;
 }
-.graphic-text {
+.sprite-wechat (@left: 0, @top: 0) {
+    background-image: url('../img/css-sprite-wechat.png');
+    background-position: @left @top;
+    background-repeat: no-repeat;
+}
+.is-graphic-text {
     text-indent: -9999px;
 }
 .text-shadow {
     text-shadow: 0 1px 0 #fff;
 }
-.highlight-content {
-    position: absolute;
-    top: -4px;
-    left: 135px;
-    width: 390px;
-    margin: 0;
-    font-size: 14px;
-    line-height: 22px;
-    .text-shadow;
+.bigger-text {
+    font-size: 1.4em;
+    line-height: 1.8em;
 }
 .content-list {
-    margin: 0 88px;
+    padding: 35px 88px 0 88px;
 }
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+.block {
+    display: block;
+}
+.column {
+    float: left;
+}
+// User select
+// For selecting text on the page
+.user-select (@select) {
+	-webkit-user-select: @select;
+	-moz-user-select: @select;
+	-ms-user-select: @select;
+	-o-user-select: @select;
+	user-select: @select;
+}
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+// Source: https://github.com/twitter/bootstrap/blob/master/less/mixins.less
+.hide-text () {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+/* @Mixins for Sprites */
+.sprite-app-store-hover { .sprite(0px, 0px); .is-graphic-text; width: 160px; height: 54px; } 
+.sprite-app-store-normal { .sprite(0px, -104px); .is-graphic-text; width: 160px; height: 54px; } 
+.sprite-bg-paper-footer { .sprite(0px, -208px); width:774px; height: 285px;} 
+.sprite-dashed-line { .sprite(-824px, -1490px); } 
+.sprite-highlight-3-seconds { .sprite(0px, -543px); .is-graphic-text; } 
+.sprite-highlight-budget-mode{ .sprite(0px, -618px); .is-graphic-text; } 
+.sprite-highlight-sleek-ui { .sprite(0px, -693px); .is-graphic-text; } 
+.sprite-highlight-whats-more { .sprite(0px, -768px); .is-graphic-text; } 
+.sprite-iphone5-base { .sprite(0px, -843px); .is-graphic-text; width: 275px; height: 570px; } 
+.sprite-iphone5-glare-overlay { .sprite(0px, -1463px); .is-graphic-text; width: 153px; height: 423px; } 
+.sprite-name-art { .sprite(0px, -1936px); .is-graphic-text; width: 187px; height: 48px; }
+.sprite-portrait-ada { .sprite(-824px, 0px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-daisy { .sprite(-824px, -98px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-grace { .sprite(-824px, -196px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-liangying { .sprite(-824px, -294px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-liki { .sprite(-824px, -392px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-majun { .sprite(-824px, -490px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-ning { .sprite(-824px, -588px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-rome { .sprite(-824px, -686px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-portrait-yingbin { .sprite(-824px, -784px); .is-graphic-text; width: 48px; height: 48px; }
+.sprite-slogan { .sprite(-824px, -882px); .is-graphic-text;  width: 270px; height: 52px; } 
+.sprite-stamp { .sprite(-824px, -984px); .is-graphic-text; width: 203px; height: 97px; } 
+.sprite-txt-about-us { .sprite(-824px, -1131px); .is-graphic-text; width: 96px; height: 25px; } 
+.sprite-txt-faq { .sprite(-824px, -1206px); .is-graphic-text; width: 152px; height: 25px; } 
+.sprite-txt-team { .sprite(-824px, -1281px); .is-graphic-text; width: 94px; height: 25px; } 
+.sprite-weibo-hover { .sprite(-824px, -1356px); .is-graphic-text; width: 20px; height: 17px; } 
+.sprite-weibo-normal { .sprite(-824px, -1423px); .is-graphic-text; width: 20px; height: 17px; }
+
+.sprite-wechat-clip{ .sprite-wechat(0, 0); width: 55px; height: 62px; }
+.sprite-wechat-complain{ .sprite-wechat(0, -112px); width: 302px; height: 226px; }
+.sprite-wechat-receipts{ .sprite-wechat(0, -388px); width: 124px; height: 163px; }
+.sprite-wechat-slogan{ .sprite-wechat(0, -601px); width: 297px; height: 25px; }
+.sprite-wechat-ww{ .sprite-wechat(0, -676px); width: 579px; height: 234px; }
+
 /* ---------------------------------- */
 
 /* @FontFace*/
@@ -120,20 +168,40 @@
 /* ---------------------------------- */
 
 /* @Global */
-body {
-    background-image: url('../image/bg-woojuu-loop.jpg');
+html {
+	 background: url('../img/bg-woojuu-loop.jpg') left top repeat;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { margin: 0; }
+body {
+	font-family: 'Helvetica Neue', 'Hiragino Sans GB', Helvetica, STHeiti, Microsoft YaHei, SimHei, Arial, sans-serif;
+	font-size: 62.5%;
+}
 h1, h2, h3 { margin: 0; }
 ul, ol { margin: 0; padding: 0; }
+ul, li {
+	list-style: none;
+}
 a {
     color: @link-color;
     text-decoration: none;
 
-    &:active, &:visited { color: @link-color; }
+    &:visited { color: @link-color; }
+    &:active { color: @link-green-color; }
     &:hover {
-        border-bottom: solid 1px @link-color;
+        color: @link-green-color;
+        border-bottom: solid 1px @link-green-color;
     }
+}
+i {
+	display: block;
+	margin: 0;
+	padding: 0;
+	.hide-text();
+}
+hr {
+	clear: both;
+	border: none;
+	float: none;
+	overflow: hidden;
 }
 
 
@@ -143,19 +211,35 @@ a {
 /* ---------------------------------- */
 
 /* @Wrapper */
-div#wrapper {
+.wrapper {
     width: 774px;
-    .middle-align;
+	.center-block;
+}
+
+/* ---------------------------------- */
+
+/* ---------------------------------- */
+
+/* @Wrapper > @Shadow */
+.shadow {
+    background: url('../img/bg-paper-shadow.png') 0 50% no-repeat;
+}
+
+/* ---------------------------------- */
+
+/* @Wrapper > @Shadow > @Main */
+.main {
+    width: 700px;
+	.center-block;
+    background: url('../img/bg-paper-loop.jpg') 0 50% repeat-y;
 }
 
 /* ---------------------------------- */
 
 /* @Header */
 header {
-    .container-padding;
-    background: url('../image/bg-paper-header.png') 0 0 no-repeat;
-
-    nav {
+	font-size: 1.4em;
+	nav {
         line-height: @nav-height;
         margin: 0 @nav-margin;
 
@@ -164,97 +248,152 @@ header {
             .text-shadow;
         }
     }
-    hgroup {
-        position: relative;
-        padding-top: @hgroup-padding-top;
-        .sprite(0px, -700px);
-
-        h1 {
-            width: @logo-size;
-            height: @logo-size;
-            .graphic-text;
-            .sprite(0px, 0px);
-            margin-left: @logo-margin;
-        }
-        h2 {
-            position: absolute;
-            top: @hgroup-padding-top + 34px;
-            left: @logo-margin + @logo-size + @name-logo-gap;
-            width: @name-width;
-            height: @name-height;
-            .graphic-text;
-            .sprite(-250px, 0px);
-        }
-        a.appstore {
-            display: block;
-            position: absolute;
-            top: @hgroup-padding-top + @name-height + 58px;
-            left: @logo-margin + @logo-size + @appstore-logo-gap;
-            width: @appstore-width;
-            height: @appstore-height;
-            .graphic-text;
-            .sprite(-400px, -100px);
-            text-decoration: none;
-
-            &:visited {}
-            &:hover { text-decoration: none; border: none; .sprite(-400px, -154px); }
-            &:active { .sprite(-400px, -208px); }
-        }
-        figure {
-            position: absolute;
-            top: @hgroup-padding-top;
-            right: -@free-badge-size / 2 + 20px;
-            width: @free-badge-size;
-            height: @free-badge-size;
-            .graphic-text;
-            .sprite(-250px, -100px);
-        }
-    }
+	hr {
+		margin: 0;
+		height: 2px;
+		.sprite-dashed-line;
+	}
 }
 /* ---------------------------------- */
 
 /* @Content */
-div#content {
-    .container-padding;
-    padding-top: @content-padding;
-    padding-bottom: @content-padding;
-    background: url('../image/bg-paper-loop.png') repeat-y left top;
-    
-    /* @Hightlights */
-    ul#highlights {
-        list-style: none;
-        .content-list;
+#content {
+    background: url('../img/bg-paper-header.jpg') 0 0 no-repeat;
 
-        li {
-            position: relative;
-            margin-bottom: 40px;
+	header {
+		ul {
+			overflow: hidden;
+		}
+		li {
+			float: left;
+			margin-right: 30px;
+		}
+	}
+
+    /* @Introduction */
+    #introduction {
+        .relative;
+       	.user-select(none);
+        height: @introduction-height;
+        overflow: hidden;
+
+        #title {
+            .absolute;
+            top: 50%;
+            right: 42px;
+            margin-top: -110px;
+
+            .name {
+                .relative;
+                margin-bottom: 16px;
+
+                a { .block; color: @link-green-color ;}
+                h1 { .sprite-name-art; }
+                .version {
+                    .absolute;
+                    top: (@name-height - 15px);
+                    left: (@name-width + 15px);
+                }               
+            }
 
             h2 {
-                width: @highlight-width;
-                height: @highlight-height;
+                margin-bottom: 36px;
+                .sprite-slogan;
             }
-            p { .highlight-content; }
+
+            .download {
+
+                a {
+                    .block;
+                    .sprite-app-store-normal;
+                    text-decoration: none;
+
+                    &:visited {}
+                    &:hover, &:active { text-decoration: none; border: none; .sprite-app-store-hover; }
+                }
+            }
+        } // end of #title
+
+        #gallery {
+            .relative;
+            top: 35px;
+            left: 50px;
+            .sprite-iphone5-base;
+
+            .glare{
+                .absolute;
+                top: 8px;
+                right: 10px;
+                .sprite-iphone5-glare-overlay;
+                z-index: 1001;
+            }
+            .slideshow {
+                .absolute;
+                top: 80px;
+                left: 23px;
+                z-index: 1000;
+            }
+        } // end of #gallery
+
+    }
+    
+    /* @Hightlights */
+    #highlights {
+        .sprite-dashed-line;
+        .user-select(none);
+        padding: 12px 50px 0;
+        overflow: hidden;
+
+        .grid2col {
+            list-style: none outside;
+            margin-top: 50px;
+            zoom: 1;
         }
-        li#highlight-ui {
-            h2 { .graphic-text; .sprite(-250px, -250px); }
+        .grid2col::after {
+            .block;
+            content: ".";
+            height: 0;
+            clear: both;
+            visibility: hidden;
         }
-        li#highlight-budget {
-            h2 { .graphic-text; .sprite(-250px, (-250px - @highlight-title-offset)); }
-        }
-        li#highlight-seconds {
-            h2 { .graphic-text; .sprite(-250px, (-250px - @highlight-title-offset * 2)); }
-        }
+            .column {
+                padding-left: 10px;
+                width: @column-width;
+                height: @column-height;
+                overflow: hidden;
+            }
+            .second {
+                float: right;
+            }
+            p {
+				font-size: 1.4em;
+                .text-shadow; 
+            }
+            #highlight-sleek-ui {
+                h2 { .sprite-highlight-sleek-ui; }
+            }
+            #highlight-budget-mode {
+                h2 { .sprite-highlight-budget-mode; }
+            }
+            #highlight-3-seconds {
+                h2 { .sprite-highlight-3-seconds; }
+            }
+            #highlight-whats-more {
+                h2 { .sprite-highlight-whats-more; }
+            }
     }
     
     /* ---------------------------------- */
     
     /* @FAQ */
     #faq {
+		.bigger-text;
         .content-list;
 
+        a { color: @link-green-color; }
+
         h2 {
-            .sprite(-400px, -275px);
-            .graphic-text;
+            .sprite-txt-faq;
             margin-bottom: 30px;
         }
         ul {
@@ -265,23 +404,77 @@ div#content {
 
                 h2 { .text-shadow; }
             }
-            a { color: #666; }
         }
-        p { line-height: 20px; }
+        p { line-height: 1.8em; }
+		p.last { margin-bottom: 0; }
     }
+
+    /* ---------------------------------- */
+
+    /* @WeChat */
+	#wechat {
+		position: relative;
+		width: 600px;
+		.center-block();
+
+		.receipts {
+			position: absolute;
+			right: -76px;
+			top: -10px;
+			.sprite-wechat-receipts;
+			z-index: 1000;
+		}
+		.clip {
+			position: absolute;
+			right: -70px;
+			top: 0;
+			.sprite-wechat-clip;
+			z-index: 1001;
+		}
+		aside, p {
+			font-size: 1.4em;
+		}
+		aside {
+			text-align: center;
+			margin-top: 15px;
+		}
+		p#complain {
+			.sprite-wechat-complain;
+			.hide-text();
+			margin-top: 40px;
+		}
+		figure#ww {
+			.sprite-wechat-ww;
+			.hide-text();
+			margin-top: -40px;
+		}
+		p#slogan-wechat {
+			.sprite-wechat-slogan;
+			.hide-text();
+			.center-block();
+			margin-top: 60px;
+		}
+	}
 
     /* ---------------------------------- */
     
     /* @About Us */
+	/*
     #about-us {
         .content-list;
+        .sprite-dashed-line;
+
+        a { color: @link-green-color; }
 
         h2 {
-            .graphic-text;
+            .is-graphic-text;
             margin-bottom: 30px;
         }
-        h2.us { .sprite(-400px, -301px); }
-        h2.team { .sprite(-400px, -325px); margin-top: 30px; }
+        h2.us { .sprite-txt-about-us; }
+        p.lean {
+            .bigger-text;
+        }
+        h2.team { .sprite-txt-team; margin-top: 30px; }
         ul {
             list-style: none;
             margin-left: 60px;
@@ -291,63 +484,53 @@ div#content {
                 figure { position: absolute; top: 0; left: -60px; }
             }
             li#about-liki {
-                figure { width: 42px; height: 48px; .sprite(-400px, -375px); .graphic-text; }
+                figure { .sprite-portrait-liki; }
             }
             li#about-rome {
-                figure { width: 42px; height: 48px; .sprite(-454px, -375px); .graphic-text; }
+                figure { .sprite-portrait-rome; }
             }
             li#about-daisy {
-                figure{ width: 42px; height: 48px; .sprite(-503px, -375px); .graphic-text; }
+                figure{ .sprite-portrait-daisy; }
             }
-            li#about-grace {
-                figure { width: 42px; height: 48px; .sprite(-555px, -375px); .graphic-text; }
+            li#about-liangying {
+                figure { .sprite-portrait-liangying; }
+            }
+            li#about-yingbin {
+                figure { .sprite-portrait-yingbin; }
             }
         }
         p { line-height: 20px; }
-    }
+    }*/
 }
 
 /* ---------------------------------- */
 
 /* @Footer */
+.ft { .sprite-bg-paper-footer; }
+
 footer {
-    .container-padding;
-    background: url('../image/bg-paper-footer.png') no-repeat left bottom;
-    padding-bottom: 30px;
+    width: 700px;
+	font-size: 1.4em;
+	.center-block;
     
-    #iphone-slideshow {
+    .end {
+        .relative;
+        height: 200px;
+        text-align: center;
 
-        #wallpaper {
-            position: relative;
-            
-            figure#clip {
-                position: absolute;
-                top: 0;
-                right: -15px;
-                width: @clip-width;
-                height: @clip-height;
-                .sprite(-600px, 0px);
-                .graphic-text;
-                z-index: 10000;
-            }
-        }
-        #iphone-frame {
-            width: @iphone-frame-width;
-            height: @iphone-frame-height;
-            .middle-align;
-            .sprite(0px, -350px);
-
-            img {
-                margin-left: 32px;
-                margin-top: 132px;
-            }
+        .stamp {
+            .absolute;
+            .sprite-stamp;
+            top: 50%;
+            left: 50%;
+            margin-left: -101px;
+            margin-top: -50px;
         }
     }
-    
     nav {
         height: @nav-height;
         padding-top: 20px;
-        .sprite(0px, -700px);
+        .sprite-dashed-line;
         
         ul {
             margin: 0 @nav-margin;
@@ -365,16 +548,13 @@ footer {
             }
         }
         a#weibo {
-            display: block;
-            width: 19px;
-            height: 17px;
+            .block;
+            .sprite-weibo-normal;
             margin: -2px;
-            .sprite(0px, -250px);
-            .graphic-text;
             
             &:hover {
                 border: none;
-                .sprite(0px, -275px);
+                .sprite-weibo-hover;
             }
         }
     }

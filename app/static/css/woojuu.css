@@ -1,5 +1,5 @@
 /*
- * Woojuu v0.1
+ * Woojuu v0.4
  *
  * woojuu.less
  *
@@ -34,46 +34,281 @@ body {
 /* @Variables */
 /* ---------------------------------- */
 /* @Mixins */
-.container-padding {
-  padding: 0 37px;
-}
-.graphic-text {
+.is-graphic-text {
   text-indent: -9999px;
 }
 .text-shadow {
   text-shadow: 0 1px 0 #fff;
 }
-.highlight-content {
-  position: absolute;
-  top: -4px;
-  left: 135px;
-  width: 390px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 22px;
-  text-shadow: 0 1px 0 #fff;
+.bigger-text {
+  font-size: 1.4em;
+  line-height: 1.8em;
 }
 .content-list {
-  margin: 0 88px;
+  padding: 35px 88px 0 88px;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.block {
+  display: block;
+}
+.column {
+  float: left;
+}
+/* @Mixins for Sprites */
+.sprite-app-store-hover {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 160px;
+  height: 54px;
+}
+.sprite-app-store-normal {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -104px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 160px;
+  height: 54px;
+}
+.sprite-bg-paper-footer {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -208px;
+  background-repeat: no-repeat;
+  width: 774px;
+  height: 285px;
+}
+.sprite-dashed-line {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1490px;
+  background-repeat: no-repeat;
+}
+.sprite-highlight-3-seconds {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -543px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.sprite-highlight-budget-mode {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -618px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.sprite-highlight-sleek-ui {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -693px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.sprite-highlight-whats-more {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -768px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.sprite-iphone5-base {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -843px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 275px;
+  height: 570px;
+}
+.sprite-iphone5-glare-overlay {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -1463px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 153px;
+  height: 423px;
+}
+.sprite-name-art {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -1936px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 187px;
+  height: 48px;
+}
+.sprite-portrait-ada {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-daisy {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -98px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-grace {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -196px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-liangying {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -294px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-liki {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -392px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-majun {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -490px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-ning {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -588px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-rome {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -686px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-portrait-yingbin {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -784px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+}
+.sprite-slogan {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -882px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 270px;
+  height: 52px;
+}
+.sprite-stamp {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -984px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 203px;
+  height: 97px;
+}
+.sprite-txt-about-us {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1131px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 96px;
+  height: 25px;
+}
+.sprite-txt-faq {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1206px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 152px;
+  height: 25px;
+}
+.sprite-txt-team {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1281px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 94px;
+  height: 25px;
+}
+.sprite-weibo-hover {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1356px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 20px;
+  height: 17px;
+}
+.sprite-weibo-normal {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1423px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 20px;
+  height: 17px;
+}
+.sprite-wechat-clip {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 55px;
+  height: 62px;
+}
+.sprite-wechat-complain {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -112px;
+  background-repeat: no-repeat;
+  width: 302px;
+  height: 226px;
+}
+.sprite-wechat-receipts {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -388px;
+  background-repeat: no-repeat;
+  width: 124px;
+  height: 163px;
+}
+.sprite-wechat-slogan {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -601px;
+  background-repeat: no-repeat;
+  width: 297px;
+  height: 25px;
+}
+.sprite-wechat-ww {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -676px;
+  background-repeat: no-repeat;
+  width: 579px;
+  height: 234px;
 }
 /* ---------------------------------- */
 /* @FontFace*/
 /* ---------------------------------- */
 /* @Global */
-body {
-  background-image: url('../image/bg-woojuu-loop.jpg');
+html {
+  background: url('../img/bg-woojuu-loop.jpg') left top repeat;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
-  margin: 0;
+body {
+  font-family: 'Helvetica Neue', 'Hiragino Sans GB', Helvetica, STHeiti, Microsoft YaHei, SimHei, Arial, sans-serif;
+  font-size: 62.5%;
 }
 h1,
 h2,
@@ -85,16 +320,39 @@ ol {
   margin: 0;
   padding: 0;
 }
+ul,
+li {
+  list-style: none;
+}
 a {
   color: #303030;
   text-decoration: none;
 }
-a:active,
 a:visited {
   color: #303030;
 }
+a:active {
+  color: #3b7d00;
+}
 a:hover {
-  border-bottom: solid 1px #303030;
+  color: #3b7d00;
+  border-bottom: solid 1px #3b7d00;
+}
+i {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+hr {
+  clear: both;
+  border: none;
+  float: none;
+  overflow: hidden;
 }
 ::-moz-selection {
   background: #aeda50;
@@ -104,17 +362,31 @@ a:hover {
 }
 /* ---------------------------------- */
 /* @Wrapper */
-div#wrapper {
+.wrapper {
   width: 774px;
+  display: block;
   margin: 0 auto;
   padding: 0;
-  overflow: hidden;
+}
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* @Wrapper > @Shadow */
+.shadow {
+  background: url('../img/bg-paper-shadow.png') 0 50% no-repeat;
+}
+/* ---------------------------------- */
+/* @Wrapper > @Shadow > @Main */
+.main {
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  background: url('../img/bg-paper-loop.jpg') 0 50% repeat-y;
 }
 /* ---------------------------------- */
 /* @Header */
 header {
-  padding: 0 37px;
-  background: url('../image/bg-paper-header.png') 0 0 no-repeat;
+  font-size: 1.4em;
 }
 header nav {
   line-height: 33px;
@@ -124,76 +396,19 @@ header nav li.date {
   color: #949494;
   text-shadow: 0 1px 0 #fff;
 }
-header hgroup {
-  position: relative;
-  padding-top: 20px;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px -700px;
-  background-repeat: no-repeat;
-}
-header hgroup h1 {
-  width: 228px;
-  height: 228px;
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-  margin-left: 82px;
-}
-header hgroup h2 {
-  position: absolute;
-  top: 54px;
-  left: 344px;
-  width: 266px;
-  height: 67px;
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -250px 0px;
-  background-repeat: no-repeat;
-}
-header hgroup a.appstore {
-  display: block;
-  position: absolute;
-  top: 145px;
-  left: 396px;
-  width: 160px;
-  height: 53px;
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -100px;
-  background-repeat: no-repeat;
-  text-decoration: none;
-}
-header hgroup a.appstore:hover {
-  text-decoration: none;
-  border: none;
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -154px;
-  background-repeat: no-repeat;
-}
-header hgroup a.appstore:active {
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -208px;
-  background-repeat: no-repeat;
-}
-header hgroup figure {
-  position: absolute;
-  top: 20px;
-  right: -34.5px;
-  width: 109px;
-  height: 109px;
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -250px -100px;
+header hr {
+  margin: 0;
+  height: 2px;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1490px;
   background-repeat: no-repeat;
 }
 /* ---------------------------------- */
 /* @Content */
-div#content {
-  padding: 0 37px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: url('../image/bg-paper-loop.png') repeat-y left top;
+#content {
+  background: url('../img/bg-paper-header.jpg') 0 0 no-repeat;
+  /* @Introduction */
+
   /* @Hightlights */
 
   /* ---------------------------------- */
@@ -202,180 +417,370 @@ div#content {
 
   /* ---------------------------------- */
 
+  /* @WeChat */
+
+  /* ---------------------------------- */
+
   /* @About Us */
 
+  /*
+    #about-us {
+        .content-list;
+        .sprite-dashed-line;
+
+        a { color: @link-green-color; }
+
+        h2 {
+            .is-graphic-text;
+            margin-bottom: 30px;
+        }
+        h2.us { .sprite-txt-about-us; }
+        p.lean {
+            .bigger-text;
+        }
+        h2.team { .sprite-txt-team; margin-top: 30px; }
+        ul {
+            list-style: none;
+            margin-left: 60px;
+            
+            li {
+                position: relative;
+                figure { position: absolute; top: 0; left: -60px; }
+            }
+            li#about-liki {
+                figure { .sprite-portrait-liki; }
+            }
+            li#about-rome {
+                figure { .sprite-portrait-rome; }
+            }
+            li#about-daisy {
+                figure{ .sprite-portrait-daisy; }
+            }
+            li#about-liangying {
+                figure { .sprite-portrait-liangying; }
+            }
+            li#about-yingbin {
+                figure { .sprite-portrait-yingbin; }
+            }
+        }
+        p { line-height: 20px; }
+    }*/
+
 }
-div#content ul#highlights {
-  list-style: none;
-  margin: 0 88px;
+#content header ul {
+  overflow: hidden;
 }
-div#content ul#highlights li {
+#content header li {
+  float: left;
+  margin-right: 30px;
+}
+#content #introduction {
   position: relative;
-  margin-bottom: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  height: 488px;
+  overflow: hidden;
 }
-div#content ul#highlights li h2 {
-  width: 110px;
+#content #introduction #title {
+  position: absolute;
+  top: 50%;
+  right: 42px;
+  margin-top: -110px;
+}
+#content #introduction #title .name {
+  position: relative;
+  margin-bottom: 16px;
+}
+#content #introduction #title .name a {
+  display: block;
+  color: #3b7d00;
+}
+#content #introduction #title .name h1 {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -1936px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 187px;
+  height: 48px;
+}
+#content #introduction #title .name .version {
+  position: absolute;
+  top: 33px;
+  left: 202px;
+}
+#content #introduction #title h2 {
+  margin-bottom: 36px;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -882px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 270px;
+  height: 52px;
+}
+#content #introduction #title .download a {
+  display: block;
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -104px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 160px;
+  height: 54px;
+  text-decoration: none;
+}
+#content #introduction #title .download a:hover,
+#content #introduction #title .download a:active {
+  text-decoration: none;
+  border: none;
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 160px;
+  height: 54px;
+}
+#content #introduction #gallery {
+  position: relative;
+  top: 35px;
+  left: 50px;
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -843px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 275px;
+  height: 570px;
+}
+#content #introduction #gallery .glare {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -1463px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 153px;
+  height: 423px;
+  z-index: 1001;
+}
+#content #introduction #gallery .slideshow {
+  position: absolute;
+  top: 80px;
+  left: 23px;
+  z-index: 1000;
+}
+#content #highlights {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1490px;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 12px 50px 0;
+  overflow: hidden;
+}
+#content #highlights .grid2col {
+  list-style: none outside;
+  margin-top: 50px;
+  zoom: 1;
+}
+#content #highlights .grid2col::after {
+  display: block;
+  content: ".";
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#content #highlights .column {
+  padding-left: 10px;
+  width: 255px;
+  height: 90px;
+  overflow: hidden;
+}
+#content #highlights .second {
+  float: right;
+}
+#content #highlights p {
+  font-size: 1.4em;
+  text-shadow: 0 1px 0 #fff;
+}
+#content #highlights #highlight-sleek-ui h2 {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -693px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+#content #highlights #highlight-budget-mode h2 {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -618px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+#content #highlights #highlight-3-seconds h2 {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -543px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+#content #highlights #highlight-whats-more h2 {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -768px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+#content #faq {
+  font-size: 1.4em;
+  line-height: 1.8em;
+  padding: 35px 88px 0 88px;
+}
+#content #faq a {
+  color: #3b7d00;
+}
+#content #faq h2 {
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1206px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 152px;
   height: 25px;
-}
-div#content ul#highlights li p {
-  position: absolute;
-  top: -4px;
-  left: 135px;
-  width: 390px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 22px;
-  text-shadow: 0 1px 0 #fff;
-}
-div#content ul#highlights li#highlight-ui h2 {
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -250px -250px;
-  background-repeat: no-repeat;
-}
-div#content ul#highlights li#highlight-budget h2 {
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -250px -275px;
-  background-repeat: no-repeat;
-}
-div#content ul#highlights li#highlight-seconds h2 {
-  text-indent: -9999px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -250px -300px;
-  background-repeat: no-repeat;
-}
-div#content #faq {
-  margin: 0 88px;
-}
-div#content #faq h2 {
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -275px;
-  background-repeat: no-repeat;
-  text-indent: -9999px;
   margin-bottom: 30px;
 }
-div#content #faq ul {
+#content #faq ul {
   list-style: none;
 }
-div#content #faq ul li {
+#content #faq ul li {
   margin-top: 30px;
 }
-div#content #faq ul li h2 {
+#content #faq ul li h2 {
   text-shadow: 0 1px 0 #fff;
 }
-div#content #faq ul a {
-  color: #666;
+#content #faq p {
+  line-height: 1.8em;
 }
-div#content #faq p {
-  line-height: 20px;
+#content #faq p.last {
+  margin-bottom: 0;
 }
-div#content #about-us {
-  margin: 0 88px;
-}
-div#content #about-us h2 {
-  text-indent: -9999px;
-  margin-bottom: 30px;
-}
-div#content #about-us h2.us {
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -301px;
-  background-repeat: no-repeat;
-}
-div#content #about-us h2.team {
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -325px;
-  background-repeat: no-repeat;
-  margin-top: 30px;
-}
-div#content #about-us ul {
-  list-style: none;
-  margin-left: 60px;
-}
-div#content #about-us ul li {
+#content #wechat {
   position: relative;
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
 }
-div#content #about-us ul li figure {
+#content #wechat .receipts {
   position: absolute;
+  right: -76px;
+  top: -10px;
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -388px;
+  background-repeat: no-repeat;
+  width: 124px;
+  height: 163px;
+  z-index: 1000;
+}
+#content #wechat .clip {
+  position: absolute;
+  right: -70px;
   top: 0;
-  left: -60px;
-}
-div#content #about-us ul li#about-liki figure {
-  width: 42px;
-  height: 48px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -400px -375px;
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 0;
   background-repeat: no-repeat;
-  text-indent: -9999px;
+  width: 55px;
+  height: 62px;
+  z-index: 1001;
 }
-div#content #about-us ul li#about-rome figure {
-  width: 42px;
-  height: 48px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -454px -375px;
+#content #wechat aside,
+#content #wechat p {
+  font-size: 1.4em;
+}
+#content #wechat aside {
+  text-align: center;
+  margin-top: 15px;
+}
+#content #wechat p#complain {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -112px;
   background-repeat: no-repeat;
-  text-indent: -9999px;
+  width: 302px;
+  height: 226px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  margin-top: 40px;
 }
-div#content #about-us ul li#about-daisy figure {
-  width: 42px;
-  height: 48px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -503px -375px;
+#content #wechat figure#ww {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -676px;
   background-repeat: no-repeat;
-  text-indent: -9999px;
+  width: 579px;
+  height: 234px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  margin-top: -40px;
 }
-div#content #about-us ul li#about-grace figure {
-  width: 42px;
-  height: 48px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -555px -375px;
+#content #wechat p#slogan-wechat {
+  background-image: url('../img/css-sprite-wechat.png');
+  background-position: 0 -601px;
   background-repeat: no-repeat;
-  text-indent: -9999px;
-}
-div#content #about-us p {
-  line-height: 20px;
+  width: 297px;
+  height: 25px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 60px;
 }
 /* ---------------------------------- */
 /* @Footer */
-footer {
-  padding: 0 37px;
-  background: url('../image/bg-paper-footer.png') no-repeat left bottom;
-  padding-bottom: 30px;
-}
-footer #iphone-slideshow #wallpaper {
-  position: relative;
-}
-footer #iphone-slideshow #wallpaper figure#clip {
-  position: absolute;
-  top: 0;
-  right: -15px;
-  width: 47px;
-  height: 49px;
-  background-image: url('../image/css-sprite.png');
-  background-position: -600px 0px;
+.ft {
+  background-image: url('../img/css-sprite.png');
+  background-position: 0px -208px;
   background-repeat: no-repeat;
-  text-indent: -9999px;
-  z-index: 10000;
+  width: 774px;
+  height: 285px;
 }
-footer #iphone-slideshow #iphone-frame {
-  width: 380px;
-  height: 320px;
+footer {
+  width: 700px;
+  font-size: 1.4em;
+  display: block;
   margin: 0 auto;
   padding: 0;
-  overflow: hidden;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px -350px;
-  background-repeat: no-repeat;
 }
-footer #iphone-slideshow #iphone-frame img {
-  margin-left: 32px;
-  margin-top: 132px;
+footer .end {
+  position: relative;
+  height: 200px;
+  text-align: center;
+}
+footer .end .stamp {
+  position: absolute;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -984px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 203px;
+  height: 97px;
+  top: 50%;
+  left: 50%;
+  margin-left: -101px;
+  margin-top: -50px;
 }
 footer nav {
   height: 33px;
   padding-top: 20px;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px -700px;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1490px;
   background-repeat: no-repeat;
 }
 footer nav ul {
@@ -391,17 +796,20 @@ footer nav ul#about li {
 }
 footer nav a#weibo {
   display: block;
-  width: 19px;
-  height: 17px;
-  margin: -2px;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px -250px;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1423px;
   background-repeat: no-repeat;
   text-indent: -9999px;
+  width: 20px;
+  height: 17px;
+  margin: -2px;
 }
 footer nav a#weibo:hover {
   border: none;
-  background-image: url('../image/css-sprite.png');
-  background-position: 0px -275px;
+  background-image: url('../img/css-sprite.png');
+  background-position: -824px -1356px;
   background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 20px;
+  height: 17px;
 }

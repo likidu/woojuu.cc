@@ -1,9 +1,16 @@
+# -*- coding: utf-8 -*-
+##-------------------------------------------------------------------
+## @copyright 2013
+## File : app.py
+## Author : liki du
+## Description :
+##-------------------------------------------------------------------
 from flask.app import Flask
-from flask.globals import request
 from flask.templating import render_template
-from flask.ext.babel import Babel, gettext
-from datetime import date, datetime
-import sys, os
+from flask.ext.babel import Babel, gettext as _
+from datetime import date
+import os
+
 
 def static(filename):
 	"""Provides the 'static' function that also appends the file's timestamp to the URL, usable in a template."""
@@ -17,18 +24,30 @@ app.jinja_env.globals.update(static=static)
 
 babel = Babel(app)
 
-greeting_words = ["Monday Monday, it's not always that gloomy, isn't it?",
+greetings = ["Monday Monday, it's not always that gloomy, isn't it?",
 				"Happy Tuesday, is everything on track?",
 				"It's Wednesday, go go go!",
 				"It's Thursday, why not have a good dinner tonight?",
 				"Happy Friday, the weekend is coming.",
 				"Wow Saturday, how would you like to celebrate it?",
 				"It's Sunday, stay tuned for the upcoming great week. Are you ready for it?"]
+greeting = _(greetings[date.today().weekday()])
+
 
 @app.route('/')
 def main():
-	greeting = gettext(greeting_words[date.today().weekday()])
 	return render_template("index.html", greeting=greeting)
+
+
+@app.route('/wechat')
+def wechat():
+	return render_template("wechat.html")
+
+
+@app.route('/faq')
+def faq():
+	return render_template("faq.html", greeting=greeting)
+
 
 @app.errorhandler(404)
 def page_not_found(error):
