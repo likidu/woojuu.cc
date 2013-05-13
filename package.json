@@ -1,0 +1,24 @@
+{
+  "name": "woojuu.cc",
+  "version": "0.4.0",
+  "description": "Woojuu Website",
+  "main": "app/template/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pomelo422/woojuu.cc.git"
+  },
+  "keywords": [
+    "woojuu"
+  ],
+  "author": "Liki Du",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "6f6d44fce85e4ed52e653873640c8c1820a286d5",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.0"
+  }
+}
