@@ -607,6 +607,9 @@ header hr {
   font-size: 1.4em;
   text-shadow: 0 1px 0 #fff;
 }
+#content #highlights h2 {
+  font-size: 1.8em;
+}
 #content #highlights #highlight-sleek-ui h2 {
   background-image: url('../img/css-sprite.png');
   background-position: 0px -693px;
